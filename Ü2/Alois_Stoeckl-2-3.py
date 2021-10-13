@@ -4,7 +4,7 @@
 
 
 while(1):
-    i = input("Geben Sie etwas an: ")
+    i = input("Geben Sie eine Ganze Zahl ein: ")
     if not i:
         break
 
@@ -15,7 +15,7 @@ while(1):
     elif (i == 0):
         print("i = 0")
     elif (i > 0):
-        print(i, "hat mindestens", len(str(i)) - 1 , "Dezimalziffern und ist", "gerade" if i % 2 else "ungerade")
+        print(i, "hat mindestens", len(str(i)), "Dezimalziffern und ist", "ungerade" if i % 2 else "gerade")
         if(len(str(i)) == 1):
             print("i hat eine Ziffer")
         elif(len(str(i)) == 2):

@@ -1,4 +1,4 @@
-# Alois Stöckl - Hü2 - Aufgabe 3
+# Alois Stöckl - Hü2 - Aufgabe 2
 
 x = [ 1, 2, "drei", "4", [5], (6,7), "Ein Text" ]
 

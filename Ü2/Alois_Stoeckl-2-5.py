@@ -27,4 +27,6 @@ i = 0
 while(i < 1000000):
     i = i + 10000;
     steuer = jahressteuer(i)
-    print("JahresSteuersatz:",steuer, " Durchschnittliche Abagben pro Monat (jahr/12)", float(steuer/12).__round__(2))
+    print("Bemessungsgrundlage:", i,
+          "JahresSteuersatz:",steuer,
+          "Durchschnittliche Abagben pro Monat (jahr/12)", float(steuer/12).__round__(2))
