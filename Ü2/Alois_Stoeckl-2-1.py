@@ -23,8 +23,8 @@ print(U)
 
 # c
 
-G = x[1::2]
-U = x[0::2]
+G = x[::2]
+U = x[1::2]
 
 print(G)
 print(U)
