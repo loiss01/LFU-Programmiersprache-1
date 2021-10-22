@@ -9,7 +9,7 @@ def AllPrimeton(n):
     counter = 1
     output = []
 
-    while(len(output) <= n):
+    while(len(output) + 1 <= n):
         counter = counter + 1
         if isPrime(counter):
             output.append(counter)

@@ -11,5 +11,7 @@ def sum35(n):
 
 print(sum35(10))
 
-for i in range(1,1001):
-    print(sum35(i))
+print(sum35(1000))
+
+#for i in range(1,1001):
+#    print(sum35(i))
