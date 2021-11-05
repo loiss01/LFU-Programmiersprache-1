@@ -1,6 +1,6 @@
-#   Alois Söckl - Hü 5 - Aufgabe 3
+#   Alois Stöckl - Hü 5 - Aufgabe 3
 
-from matplotlib import pyplot as plot
+from matplotlib import pyplot as pyp
 from math import sin, pi, cos
 from numpy import linspace
 
@@ -14,29 +14,25 @@ def fBlau(x):
     return a * sin(x+v)
 
 def drawPlot():
-    x = [-2 * pi + i * (4 * pi) / 100 for i in range(101)]
+    x = linspace(-2*pi,2*pi, 100)
     y = [fRot(x) for x in x]
-    plot.plot(x,y,"r");
+    pyp.plot(x, y, "r");
 
     y1 = [fBlau(x) for x in x]
-    plot.plot(x,y1,"b")
-    plot.draw()
+    pyp.plot(x, y1, "b")
+    pyp.show()
 
 drawPlot()
-plot.title("Versuche die Kurven dekungsgleich zu machen!")
-plot.show()
 
-
+print("b.)")
 while(True):
-    a = float(input("Geben Sie einen neuen Wert für die Amplitude an:"))
     v_new = float(input("Geben Sie einen neuen Wert für die Verschiebung an: "))
+    a = float(input("Geben Sie einen neuen Wert für die Amplitude an:"))
     if v == v_new:
         print("Goodbye!")
         break
     else:
         v = v_new
     drawPlot()
-    plot.title("Versuche die Kurven dekungsgleich zu machen!")
-    plot.show()
 
-#c ist noch zu machen
+# TODO: c.)
