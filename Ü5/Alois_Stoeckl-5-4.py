@@ -20,9 +20,9 @@ y = [signum(x) for x in x]
 print("b.)")
 
 while(True):
-    N = input("Geben Sie eine ganze Zahl [3,49] ein:")
+    N = input("Geben Sie eine gerade ganze Zahl [3,49] ein:")
 
-    if N is None: break
+    if not N: break
     N = int(N)
     if (N < 3 or N > 49 or N % 2): break
 

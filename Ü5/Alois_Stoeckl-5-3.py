@@ -26,13 +26,24 @@ drawPlot()
 
 print("b.)")
 while(True):
-    v_new = float(input("Geben Sie einen neuen Wert für die Verschiebung an: "))
+    v_new = input("Geben Sie einen neuen Wert für die Verschiebung an: ")
+
+    if not v_new:
+        break
+    else:
+        v_new = float(v_new)
+
     a = float(input("Geben Sie einen neuen Wert für die Amplitude an:"))
+
     if v == v_new:
         print("Goodbye!")
         break
     else:
         v = v_new
+
+
     drawPlot()
 
-# TODO: c.)
+print("c.)")
+print("a = 1,41421")
+print("v = 0,785")
