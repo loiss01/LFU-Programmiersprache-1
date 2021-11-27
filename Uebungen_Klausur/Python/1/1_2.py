@@ -8,6 +8,7 @@ vorname = input("Geben Sie ihren ersten Vornamen ein: ")
 
 if len(vorname.split(" ")) != 1:
     print("Zuviele Vornamen")
+    exit(0)
 
 vokale = "aeiou"
 
