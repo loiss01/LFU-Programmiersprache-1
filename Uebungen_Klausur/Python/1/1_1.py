@@ -1,4 +1,4 @@
-
+# https://www.bauboard.at/board/wbb4/index.php?thread/1538-python-1-klausur-mit-l%C3%B6sungen-und-l%C3%B6sungsversuchen/
 # Aufgabe 1:
 # Fordern Sie den Benutzer in einer Endlosschleife auf, eine ganze Zahl n einzugeben.
 # Die Schleife soll enden, wenn nichts eingegeben wurde.

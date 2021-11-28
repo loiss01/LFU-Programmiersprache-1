@@ -17,7 +17,8 @@ U = []
 
 with open(filename, "r") as fid:
     for line in fid:
-        sp = line.split(" ")
+        sp = line.split(" "
+                        "")
         I.append(sp[0])
         U.append(sp[1])
 
