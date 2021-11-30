@@ -29,9 +29,9 @@ int sum_odd(int n){
  * @return  long long number
  */
 long long factorial(int n){
-    long long s = 0;
+    long long s = 1;
 
-    for (int i = 0; i <= n; ++i) {
+    for (int i = 1; i <= n; ++i) {
         s = s*i;
     }
 
