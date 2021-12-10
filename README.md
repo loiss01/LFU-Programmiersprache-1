@@ -18,6 +18,6 @@ CLion würde ich aber nicht empfehlen da es sehr sehr umständlich ist es richti
 Alternativen:
 ---
 
-Weitere Alternativen sind:
-https://code.visualstudio.com/
+Weitere Alternativen sind: <br>
+https://code.visualstudio.com/ <br>
 https://visualstudio.microsoft.com/
