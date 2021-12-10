@@ -14,3 +14,10 @@ Es ist möglich bei JetBrains mittels der Uni E-Mail Adresse einen Studenten-Liz
 mit welcher man CLion auch Konstenfrei benutzen kann.
 
 CLion würde ich aber nicht empfehlen da es sehr sehr umständlich ist es richtig einzurichten!
+
+Alternativen:
+---
+
+Weitere Alternativen sind:
+https://code.visualstudio.com/
+https://visualstudio.microsoft.com/
