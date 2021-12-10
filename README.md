@@ -1,7 +1,7 @@
 LFU-Programmiersprache-1:
 ===
 
-Benutze IDE's:
+Benutzte IDE's:
 ---
 
 Python: https://www.jetbrains.com/pycharm/
