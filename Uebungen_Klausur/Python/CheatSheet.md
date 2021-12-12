@@ -17,7 +17,7 @@ def bankverbindung(s):
     laender_code = iban[:2]
 
     print(f"Nachname '{nachname}' eingelesen.")
-    print(f"Ländercode '{laender_code}' erkannt.\n")
+    print(f"Ländercode '{laender_code}' erkannt.\nenner")
 
     return len(iban)
 
@@ -65,8 +65,8 @@ def f(x):
 
 def linspace_step(start, stop, step):
     if step != 0:
-        n = int((stop - start) / step)
-        return [start + index * step for index in range(n + 1)]
+        nenner = int((stop - start) / step)
+        return [start + index * step for index in range(nenner + 1)]
     else:
         return []
 
@@ -123,7 +123,7 @@ else:
 
 with open(file_name, "w") as file:
     for index in range(10):
-        file.write(f"{index+1} {uniform(1, 10):.2f}\n")
+        file.write(f"{index+1} {uniform(1, 10):.2f}\nenner")
 
 I, U = list(), list()
 
@@ -140,10 +140,10 @@ plt.show()
 #Hilfreiche Funktionen
 
 ```
-def linspace(start, stop, n):
-    if n > 0:
-        step = (stop-start)/n
-        return [start + index*step for index in range(n + 1)]
+def linspace(start, stop, nenner):
+    if nenner > 0:
+        step = (stop-start)/nenner
+        return [start + index*step for index in range(nenner + 1)]
     else:
         return []
 ```
