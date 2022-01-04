@@ -1,6 +1,7 @@
 //  Alois Stöckl - Hü 10 - Aufgabe 1
 
 #include <fstream>
+#include <algorithm>
 #include "iostream"
 #include "vector"
 
@@ -36,7 +37,7 @@ void operator<<(std::ostream&  os, Bruch b){
 /**
  * Apply Lambda from lecture
  */
-auto apply = [](auto lamb, auto in){
+auto applylamb = [](auto lamb, auto in){
     for_each(begin(in), end(in), lamb);
 };
 
@@ -74,7 +75,7 @@ int main(){
         v.push_back(a);
     }
 
-    apply([](auto& in){ cout << in;}, v);
+    applylamb([](auto& in){ cout << in;}, v);
 
     //
     // -------------------------------------------------------
@@ -131,6 +132,28 @@ int main(){
     }
 
     cout << endl;
+
+    cout << "d.)" << endl;
+
+    nenner = brueche;
+    zaehler = brueche;
+
+    std::ranges::sort(brueche, greater<>{}, &Bruch::zaehler);
+    std::ranges::sort(brueche, {}, &Bruch::nenner);
+
+    for (Bruch b : brueche){
+        cout << b;
+    }
+    cout << endl;
+
+    cout << "e.)" << endl;
+
+    double wert = 0;
+    for (Bruch b : brueche){
+        wert = wert + to_double(b);
+    }
+
+    cout << "Wert der Brüche ist" << wert << endl;
 
     return 0;
 }
