@@ -1,11 +1,8 @@
-//  Alois Stöckl - Hü 10 - Aufgabe 3
-/*
-    SimpleStat:  Einfache statische Auswertung
-*/
+//  Alois Stöckl - Hü 10 - Aufgabe 4
 
-#include <iostream>
-#include <valarray>
-#include "vector"
+#include <fstream>
+#include "random"
+#include "iostream"
 
 using namespace std;
 
@@ -45,16 +42,29 @@ ostream& operator<<(ostream& os, const SimpleStat& s){
     return os;
 }
 
+
 int main(){
 
-    SimpleStat s{"User Input"};     // Statistik definieren und initialisieren
+    mt19937_64 g;
+    normal_distribution<double> nv{5.,3.};
 
-    cout << "Gib einige double ein (Ende mit Buchstabe): ";
-    for (double x; cin >> x;){
-        s += x;             // wir "speichern" (verarbeiten) die Stichprobe
+    SimpleStat s;
+    SimpleStat getuerkte_NV;
+
+    ofstream myfile;
+    myfile.open("stat.txt");
+    for (int i = 0; i < 1000000; ++i) {
+        double h = nv(g);
+        myfile << h << endl;
+        s += h;
+        if (h > 1){
+            getuerkte_NV += h;
+        }
     }
+    myfile.close();
 
-    cout << s << endl;              // wir drucken die Auswertung
+    cout << s << endl;
+    cout  << getuerkte_NV << endl;
 
     return 0;
 }

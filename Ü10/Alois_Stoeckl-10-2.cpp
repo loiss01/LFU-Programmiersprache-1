@@ -1,5 +1,6 @@
-//  Alois Stöckl - Hü 10 - Aufgabe 1
+//  Alois Stöckl - Hü 10 - Aufgabe 2
 
+#include <fstream>
 #include "iostream"
 #include "cmath"
 #include "vector"
@@ -65,18 +66,26 @@ bool compareLeangth(Vec2 a, Vec2 b){
 
 int main(){
     cout << "a)" << endl;
-    
-    // Hab es nicht geschaft mittels eilesen der Datei also hier:
+
     vector<Vec2> v;
-    v.push_back(Vec2{1, 1});
-    v.push_back(Vec2{3, 4});
-    v.push_back(Vec2{-5, 7});
-    v.push_back(Vec2{-4, -6});
-    v.push_back(Vec2{0, 15});
-    v.push_back(Vec2{2, 3});
-    v.push_back(Vec2{2, 7});
-    v.push_back(Vec2{-1, -1});
-    v.push_back(Vec2{15, -15});
+
+    fstream datei;
+    datei.open("zahlenpaare.txt", ios::in);
+
+    if (datei.is_open()){
+        string line;
+        while (getline(datei, line)){
+            Vec2 i{
+                    stod(line.substr(0, ' ')),
+                    stod(line.substr(1, ' '))};
+
+            v.push_back(i);
+            cout << line << endl;
+        }
+        datei.close();
+    }else cout << "Fehler beim öffnen der Datei!";
+
+
 
     cout << "b.1)" << endl;
 

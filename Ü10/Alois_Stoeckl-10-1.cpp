@@ -81,35 +81,29 @@ int main(){
     // -------------------------------------------------------
     //
 
-    cout << "b.)" << endl;
-    //ToDo: does not work
+    cout << endl;
+    cout << "b.)" << endl << endl;
+
+    vector<Bruch> brueche;
 
     fstream datei;
     datei.open("zahlenpaare.txt", ios::in);
 
     if (datei.is_open()){
-        cout << datei.is_open() << endl;
         string line;
         while (getline(datei, line)){
+            Bruch i{
+                stoi(line.substr(0, ' ')),
+                stoi(line.substr(1, ' '))};
+
+            brueche.push_back(i);
             cout << line << endl;
         }
         datei.close();
     }else cout << "Fehler beim öffnen der Datei!";
 
 
-    //Assertion
-    vector<Bruch> brueche;
-    brueche.push_back(Bruch{1,1});
-    brueche.push_back(Bruch{3,4});
-    brueche.push_back(Bruch{-5,7});
-    brueche.push_back(Bruch{-4,-6});
-    brueche.push_back(Bruch{0,15});
-    brueche.push_back(Bruch{2,3});
-    brueche.push_back(Bruch{2,7});
-    brueche.push_back(Bruch{-1,-1});
-    brueche.push_back(Bruch{15,-15});
-
-
+    cout << endl;
     cout << "c.)" << endl;
 
     vector<Bruch> nenner, zaehler;
@@ -132,7 +126,7 @@ int main(){
     }
 
     cout << endl;
-
+    cout << endl;
     cout << "d.)" << endl;
 
     nenner = brueche;
@@ -146,6 +140,7 @@ int main(){
     }
     cout << endl;
 
+    cout << endl;
     cout << "e.)" << endl;
 
     double wert = 0;
@@ -153,7 +148,7 @@ int main(){
         wert = wert + to_double(b);
     }
 
-    cout << "Wert der Brüche ist" << wert << endl;
+    cout << "Wert der Brüche ist: " << wert << endl;
 
     return 0;
 }
