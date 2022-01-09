@@ -34,8 +34,6 @@ int main(){
     fstream datei;
     datei.open("Gemeinden.dat", ios::in);
 
-    int test = 0;
-
     if (datei.is_open()){
         string line;
         int c = 0;
@@ -43,18 +41,6 @@ int main(){
             c++;
 
             vector<string> splitArray = splitString(line);
-
-            if (test == 0){
-                cout << splitArray.at(0) << endl;
-                cout << splitArray.at(1) << endl;
-                cout << splitArray.at(2) << endl;
-                cout << splitArray.at(3) << endl;
-                cout << splitArray.at(4) << endl;
-                cout << splitArray.at(5) << endl;
-                cout << splitArray.at(6) << endl;
-                test = 1;
-            }
-
 
             StatData i{
                     stoi(splitArray.at(2)),
