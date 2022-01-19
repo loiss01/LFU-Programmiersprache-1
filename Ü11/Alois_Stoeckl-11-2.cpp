@@ -1,57 +1,51 @@
 //  Alois Stöckl - Hü 11 - Aufgabe 2
 
-#include <fstream>
-#include <sstream>
+
 #include "iostream"
 #include "vector"
 #include "Bruch.hpp"
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+
 
 using namespace std;
-
-vector<string> splitString(string in){
-    vector<string> out;
-
-    istringstream iss(in);
-    for(std::string s; iss >> s; )
-        out.push_back(s);
-
-    return out;
-}
-
 
 int main(){
 
     vector<Bruch> v;
 
-    fstream datei;
-    datei.open("data", ios::in);
+    for (Bruch i; cin >> i; )
+        v.push_back(i);
 
-    if (datei.is_open()){
-        string line;
-        int c = 0;
-        while (getline(datei, line)){
-            c++;
-            if (c == 1) continue;
+    cout << v.size() << "Brüche ausgelesen!";
 
-            vector<string> splitArray = splitString(line);
+    double sum = 0;
+    for (Bruch i : v){
+        sum = sum + (i.z / i.n);
+    }
 
-            for (int i = 0; i < splitArray.size() / 2; ++i) {
+    cout << "Gesamtsumme: " << sum << endl;
 
+    sort(v.begin(), v.end(), to_double);
 
-                Bruch bru{
-                        stoi(splitArray.at(0 + (2*i)) ),
-                        stoi(splitArray.at(1 + (2*i)) ),
-                };
+    cout << "Größe Bruch: " << endl;
+    cout << v.at(0);
 
-                v.push_back(bru);
-            }
+    cout << "Kleinster Bruch: " << endl;
+    cout << v.at(v.size() - 1);
 
 
-            splitArray.clear();
-        }
-        cout << c << " Zeilen ausgewertet!" << endl;
-        datei.close();
-    }else cout << "Fehler beim öffnen der Datei!";
+    cout << "Brüche mit nenner 282:"
+    cout << count(v, 282, &Bruch::n) << endl;
+
+
+
+
+
+
+    /*
 
     cout << "a.)" << endl;
     cout << "Es konnten " << v.size() << " Brüche ausgelesen werden!" << endl;
@@ -94,6 +88,6 @@ int main(){
     }
 
     cout << "Nenner mit 282: " << nenner;
-
+*/
     return 0;
 }
